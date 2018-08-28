@@ -24,6 +24,9 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Vhc-Lp-Xxv" id="EDB-qa-Pm1"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n9y-EZ-JeD">
                                 <rect key="frame" x="80" y="201" width="214" height="30"/>
@@ -81,7 +84,7 @@
                         <outlet property="lblValidateEmail" destination="1fk-WC-dIo" id="84j-Pt-MgY"/>
                         <outlet property="lblValidateName" destination="Lr5-bE-lNe" id="Q2P-Pa-kqZ"/>
                         <outlet property="txtEmail" destination="n9y-EZ-JeD" id="q2I-aK-JUg"/>
-                        <outlet property="txtName" destination="kf9-Te-8gL" id="1cZ-ex-Bke"/>
+                        <outlet property="txtName" destination="kf9-Te-8gL" id="eb5-yO-63t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6a-h8-uac" userLabel="First Responder" sceneMemberID="firstResponder"/>

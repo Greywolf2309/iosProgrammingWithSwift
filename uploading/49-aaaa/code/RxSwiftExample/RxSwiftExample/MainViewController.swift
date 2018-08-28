@@ -11,26 +11,27 @@ import RxSwift
 import RxCocoa
 
 class MainViewController: UIViewController {
-    @IBOutlet weak var txtName:UITextField!
-    @IBOutlet weak var txtEmail:UITextField!
+    @IBOutlet var txtName:UITextField!
+    @IBOutlet var txtEmail:UITextField!
     
-    @IBOutlet weak var lblValidateName:UILabel?
-    @IBOutlet weak var lblValidateEmail:UILabel?
+    @IBOutlet var lblValidateName:UILabel?
+    @IBOutlet var lblValidateEmail:UILabel?
     
-    @IBOutlet weak var lblDescription:UILabel?
+    @IBOutlet var lblDescription:UILabel!
     
-    @IBOutlet weak var btnLogin:UIButton?
+    @IBOutlet var btnLogin:UIButton?
     
     @IBAction func btnLogin(sender: Any) {
         
     }
-    var countries:Observable<[String?]>?
+    var disposeBag = DisposeBag()
     override func viewDidLoad() {
         super.viewDidLoad()
-        Observable.combineLatest(txtName.rx.text, txtEmail.rx.text){ name,email in
-            print("Name: \(name), email: \(email)")
-        }
-        
+        Observable.combineLatest(txtName.rx.text.orEmpty, txtEmail.rx.text.orEmpty){ (name: String, email: String) -> (name: String, email: String) in
+            return (name , email)
+            }.map { (pair)  in
+                return "\(pair.name + pair.email)"
+        }.bind(to: lblDescription.rx.text).disposed(by: disposeBag)
     }
 
     override func didReceiveMemoryWarning() {
