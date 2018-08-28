@@ -30,8 +30,11 @@ class MainViewController: UIViewController {
         Observable.combineLatest(txtName.rx.text.orEmpty, txtEmail.rx.text.orEmpty){ (name: String, email: String) -> (name: String, email: String) in
             return (name , email)
             }.map { (pair)  in
-                return "\(pair.name + pair.email)"
+                return "You typed: \(pair.name) and: \(pair.email)"
         }.bind(to: lblDescription.rx.text).disposed(by: disposeBag)
+        txtName.rx.text.map{text in
+            return text ?? ""
+        }
     }
 
     override func didReceiveMemoryWarning() {
