@@ -8,10 +8,11 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 class MainViewController: UIViewController {
-    @IBOutlet weak var txtName:UITextField?
-    @IBOutlet weak var txtEmail:UITextField?
+    @IBOutlet weak var txtName:UITextField!
+    @IBOutlet weak var txtEmail:UITextField!
     
     @IBOutlet weak var lblValidateName:UILabel?
     @IBOutlet weak var lblValidateEmail:UILabel?
@@ -25,7 +26,10 @@ class MainViewController: UIViewController {
     }
     var countries:Observable<[String?]>?
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        Observable.combineLatest(txtName.rx.text, txtEmail.rx.text){ name,email in
+            print("Name: \(name), email: \(email)")
+        }
         
     }
 
