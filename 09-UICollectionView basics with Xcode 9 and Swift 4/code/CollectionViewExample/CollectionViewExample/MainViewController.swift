@@ -11,8 +11,7 @@ import UIKit
 class MainViewController: UIViewController,
     UICollectionViewDelegate,
     UICollectionViewDataSource,
-    UICollectionViewDelegateFlowLayout
-{
+    UICollectionViewDelegateFlowLayout {
     var collectionView: UICollectionView?
     let cellId = "ExampleCell"
     let cellSpacing:CGFloat = 10

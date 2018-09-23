@@ -265,7 +265,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JD5VUV7783;
+				DEVELOPMENT_TEAM = CH6RC35PCB;
 				INFOPLIST_FILE = StackViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunlight4d.SwiftTutorial.StackViewExample;
@@ -279,7 +279,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JD5VUV7783;
+				DEVELOPMENT_TEAM = CH6RC35PCB;
 				INFOPLIST_FILE = StackViewExample/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sunlight4d.SwiftTutorial.StackViewExample;
