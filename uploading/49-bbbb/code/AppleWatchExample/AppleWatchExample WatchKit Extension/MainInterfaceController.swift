@@ -30,9 +30,8 @@ class MainInterfaceController: WKInterfaceController {
         
     }
     @IBAction func buttonPlay(sender: Any) {
-        songState = (songState == .paused) ? .playing : .paused
-        let img = UIImage(named: "paused")
-        buttonPlay.setBackgroundImage(songState == .playing ? UIImage(named: "play") : UIImage(named: "paused"))
+        songState = (songState == .paused) ? .playing : .paused        
+        buttonPlay.setBackgroundImageNamed(songState == .playing ? "play" : "paused")
     }
     @IBAction func buttonForward(sender: Any) {
         

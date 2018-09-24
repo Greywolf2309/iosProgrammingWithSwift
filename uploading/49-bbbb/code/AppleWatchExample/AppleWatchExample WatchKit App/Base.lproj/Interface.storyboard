@@ -28,7 +28,7 @@
                                         <action selector="buttonRewindWithSender:" destination="AgC-eL-Hgc" id="cca-jg-UAY"/>
                                     </connections>
                                 </button>
-                                <button width="40" height="40" alignment="left" backgroundImage="play" id="tRl-gZ-i30">
+                                <button width="40" height="40" alignment="left" backgroundImage="paused" id="tRl-gZ-i30">
                                     <variation key="device=watch42mm" height="40" width="40"/>
                                     <variation key="device=watch44mm" height="42" width="42"/>
                                     <connections>
