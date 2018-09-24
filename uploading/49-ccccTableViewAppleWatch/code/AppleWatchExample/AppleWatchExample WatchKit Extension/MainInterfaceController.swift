@@ -42,6 +42,7 @@ class MainInterfaceController: WKInterfaceController {
              iconName: "work",
              color: UIColor.cyan)
     ]
+    var selectedRow:Int = -1
     private func configureTableWithData() {        
         table.setNumberOfRows(tasks.count, withRowType: "TaskRowController")
         for i in 0..<table.numberOfRows {
@@ -52,8 +53,10 @@ class MainInterfaceController: WKInterfaceController {
     }
     
     override func table(_ table: WKInterfaceTable, didSelectRowAt rowIndex: Int) {
-        
+        selectedRow = rowIndex
+        presentController(withName: "DetailInterfaceController", context: self)
     }
+    
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         // Configure interface objects here.

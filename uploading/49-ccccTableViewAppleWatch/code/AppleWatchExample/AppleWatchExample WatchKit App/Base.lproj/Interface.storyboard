@@ -47,40 +47,41 @@
             </objects>
             <point key="canvasLocation" x="220" y="96"/>
         </scene>
-        <!--Detail Interface Controller-->
+        <!--DetailInterfaceController-->
         <scene sceneID="EJ2-Q4-bC0">
             <objects>
-                <controller id="sla-bI-p8i" customClass="DetailInterfaceController" customModule="AppleWatchExample_WatchKit_Extension">
+                <controller identifier="DetailInterfaceController" id="sla-bI-p8i" customClass="DetailInterfaceController" customModule="AppleWatchExample_WatchKit_Extension">
                     <items>
-                        <table alignment="left" id="JEI-zG-37P">
+                        <group width="1" alignment="left" layout="vertical" spacing="10" id="XNv-qi-r82">
                             <items>
-                                <tableRow identifier="TaskRowController" id="N0y-yZ-Z0A" customClass="TaskRowController" customModule="AppleWatchExample_WatchKit_Extension">
-                                    <group key="rootItem" width="1" alignment="left" spacing="0.0" id="yH5-tO-kyW">
-                                        <items>
-                                            <imageView width="25" height="25" alignment="right" verticalAlignment="center" image="sleep" id="I69-dF-vpQ">
-                                                <color key="tintColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </imageView>
-                                            <group width="136" height="1" alignment="left" layout="vertical" spacing="0.0" id="6iZ-qn-pw1">
-                                                <items>
-                                                    <label alignment="left" text="20:03" id="TpC-YW-niw"/>
-                                                    <label alignment="left" text="Sleep" id="kxC-GG-ska"/>
-                                                </items>
-                                                <edgeInsets key="margins" left="0.0" right="0.0" top="3" bottom="0.0"/>
-                                            </group>
-                                        </items>
-                                    </group>
+                                <group width="1" alignment="left" id="Rmr-N6-BLE">
+                                    <items>
+                                        <group alignment="left" layout="vertical" spacing="0.0" id="euv-ds-RZb">
+                                            <items>
+                                                <label alignment="left" text="20:03" id="ccI-zY-XH3"/>
+                                                <label alignment="left" text="Sleep" id="3Bl-68-omu"/>
+                                            </items>
+                                            <edgeInsets key="margins" left="0.0" right="0.0" top="3" bottom="0.0"/>
+                                        </group>
+                                        <imageView width="25" height="25" alignment="right" verticalAlignment="center" image="wakeup" id="6L9-Zc-F6F">
+                                            <color key="tintColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                    </items>
+                                    <color key="backgroundColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </group>
+                                <button width="1" alignment="left" title="Delete" id="yFn-qz-hMC">
+                                    <color key="backgroundColor" red="0.74801974829999995" green="0.19215686269999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <connections>
-                                        <outlet property="imageViewTask" destination="I69-dF-vpQ" id="ZiU-3b-YEm"/>
-                                        <outlet property="labelFinishedTime" destination="TpC-YW-niw" id="hsU-s2-h2E"/>
-                                        <outlet property="labelTaskName" destination="kxC-GG-ska" id="h6W-Gb-Udr"/>
+                                        <action selector="buttonDeleleWithSender:" destination="sla-bI-p8i" id="Vk7-QW-hug"/>
                                     </connections>
-                                </tableRow>
+                                </button>
                             </items>
-                        </table>
-                        <button width="1" alignment="left" title="Button" id="yFn-qz-hMC"/>
+                        </group>
                     </items>
                     <connections>
-                        <outlet property="table" destination="JEI-zG-37P" id="SUr-rw-eq3"/>
+                        <outlet property="imageViewTask" destination="6L9-Zc-F6F" id="9Tv-Gk-SCA"/>
+                        <outlet property="labelFinishedTime" destination="ccI-zY-XH3" id="rGY-5H-c3b"/>
+                        <outlet property="labelTaskName" destination="3Bl-68-omu" id="Anz-rc-i9h"/>
                     </connections>
                 </controller>
             </objects>
