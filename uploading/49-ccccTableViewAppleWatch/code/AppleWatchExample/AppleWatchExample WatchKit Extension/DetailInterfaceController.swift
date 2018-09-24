@@ -10,5 +10,10 @@ import Foundation
 import WatchKit
 
 class DetailInterfaceController: WKInterfaceController {
-
+    @IBOutlet weak var labelTaskName: WKInterfaceLabel!
+    @IBOutlet weak var labelFinishedTime: WKInterfaceLabel!
+    @IBOutlet weak var imageViewTask: WKInterfaceImage!
+    @IBAction func buttonDelele(sender: Any) {
+        
+    }
 }

@@ -77,6 +77,7 @@
                                 </tableRow>
                             </items>
                         </table>
+                        <button width="1" alignment="left" title="Button" id="yFn-qz-hMC"/>
                     </items>
                     <connections>
                         <outlet property="table" destination="JEI-zG-37P" id="SUr-rw-eq3"/>
