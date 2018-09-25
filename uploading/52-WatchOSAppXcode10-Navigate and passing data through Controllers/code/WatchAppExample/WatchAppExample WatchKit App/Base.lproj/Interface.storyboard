@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.18" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch44" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.10"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="WatchAppExample_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <table alignment="left" id="Y5t-6Z-Do9">
+                            <items>
+                                <tableRow identifier="TaskRowController" id="XJ6-Rb-AQn" customClass="TaskRowController" customModule="WatchAppExample_WatchKit_Extension">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" id="Iw7-3y-OMh">
+                                        <items>
+                                            <imageView width="25" height="25" alignment="right" verticalAlignment="center" image="sleep" id="xqN-eE-93s">
+                                                <color key="tintColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </imageView>
+                                            <group width="136" alignment="left" layout="vertical" id="Azh-jx-cf4">
+                                                <items>
+                                                    <label alignment="left" text="20:03" id="4bZ-Ip-H7o"/>
+                                                    <label alignment="left" text="Go to sleep" id="Dtu-Wb-fgJ"/>
+                                                </items>
+                                                <edgeInsets key="margins" left="0.0" right="0.0" top="3" bottom="3"/>
+                                            </group>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="imageViewTask" destination="xqN-eE-93s" id="Cir-dV-Ffz"/>
+                                        <outlet property="labelFinishedTime" destination="4bZ-Ip-H7o" id="yz9-YB-5Ig"/>
+                                        <outlet property="labelTaskName" destination="Dtu-Wb-fgJ" id="USt-3G-Mdp"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="table" destination="Y5t-6Z-Do9" id="UYh-2q-DaC"/>
+                        <segue destination="9jd-2M-xO8" kind="relationship" relationship="nextPage" id="Zp0-af-D4V"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="70.956521739130437" y="182.90178571428572"/>
+        </scene>
+        <!--DetailInterfaceController-->
+        <scene sceneID="5ye-Ib-4O7">
+            <objects>
+                <controller identifier="DetailInterfaceController" id="9jd-2M-xO8" customClass="DetailInterfaceController" customModule="WatchAppExample_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="SyX-wh-qv5">
+                            <items>
+                                <group width="136" alignment="left" layout="vertical" id="wo6-2s-KzP">
+                                    <items>
+                                        <label alignment="left" text="20:03" id="y1i-4w-QVM"/>
+                                        <label alignment="left" text="Go to sleep" id="hcs-k9-zrM"/>
+                                    </items>
+                                    <edgeInsets key="margins" left="0.0" right="0.0" top="3" bottom="3"/>
+                                </group>
+                                <imageView width="25" height="25" alignment="right" verticalAlignment="center" image="sleep" id="EU9-yN-90o">
+                                    <color key="tintColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </imageView>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Delete" id="0X7-U2-ZBm" colorLabel="IBBuiltInLabel-Red">
+                            <color key="backgroundColor" red="0.74801974829999995" green="0.19215686269999999" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="buttonDeleleWithSender:" destination="9jd-2M-xO8" id="CZu-RY-d3X"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="imageViewTask" destination="EU9-yN-90o" id="gsh-TC-mOv"/>
+                        <outlet property="labelFinishedTime" destination="y1i-4w-QVM" id="XwB-ki-dUr"/>
+                        <outlet property="labelTaskName" destination="hcs-k9-zrM" id="hiQ-bO-udU"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="303" y="183"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="WatchAppExample_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Niz-AI-uX2">
+            <objects>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="WatchAppExample_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+    </scenes>
+</document>

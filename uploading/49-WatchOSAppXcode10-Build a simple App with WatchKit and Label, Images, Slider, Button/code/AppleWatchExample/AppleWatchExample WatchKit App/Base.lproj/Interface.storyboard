@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="14313.18" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch44" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="14238.10"/>
+    </dependencies>
+    <scenes>
+        <!--Main Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="MainInterfaceController" customModule="AppleWatchExample_WatchKit_Extension">
+                    <items>
+                        <group width="1" alignment="left" layout="vertical" id="Fdi-B9-uar">
+                            <items>
+                                <label alignment="left" text="Artist" id="87j-Ct-CzV"/>
+                                <label alignment="left" text="Song" id="OhU-cC-vqH"/>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" contentMode="center" spacing="31" id="d1E-Wj-HM6">
+                            <items>
+                                <button width="40" height="40" alignment="left" backgroundImage="rewind" id="wwK-PY-u8S">
+                                    <connections>
+                                        <action selector="buttonRewindWithSender:" destination="AgC-eL-Hgc" id="2gQ-mW-XBh"/>
+                                    </connections>
+                                </button>
+                                <button width="40" height="40" alignment="left" backgroundImage="play" id="eKC-Gb-zVz">
+                                    <connections>
+                                        <action selector="buttonPlayWithSender:" destination="AgC-eL-Hgc" id="XfA-GJ-iye"/>
+                                    </connections>
+                                </button>
+                                <button width="40" height="40" alignment="left" backgroundImage="fast-forward" id="BWh-yR-v7w">
+                                    <connections>
+                                        <action selector="buttonForwardWithSender:" destination="AgC-eL-Hgc" id="G2u-A6-Nhz"/>
+                                    </connections>
+                                </button>
+                            </items>
+                            <variation key="device=watch38mm" spacing="7"/>
+                            <variation key="device=watch40mm" spacing="20"/>
+                            <variation key="device=watch42mm" spacing="17"/>
+                        </group>
+                        <slider width="1" alignment="left" value="1" maximum="10" steps="10" id="KWH-SE-2Bt">
+                            <connections>
+                                <action selector="sliderActionWithValue:" destination="AgC-eL-Hgc" id="ZQ2-iy-d47"/>
+                            </connections>
+                        </slider>
+                    </items>
+                    <connections>
+                        <outlet property="buttonForward" destination="BWh-yR-v7w" id="5nQ-rb-GMc"/>
+                        <outlet property="buttonPlay" destination="eKC-Gb-zVz" id="JMl-Lz-PpP"/>
+                        <outlet property="buttonRewind" destination="wwK-PY-u8S" id="RRT-ml-lyb"/>
+                        <outlet property="sliderVolume" destination="KWH-SE-2Bt" id="YyW-cW-joY"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="105" y="160"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" numberOfLines="0" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                        <segue destination="eXb-UN-Cd0" kind="relationship" relationship="dynamicInteractiveNotificationInterface" id="mpB-YA-K8N"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="AppleWatchExample_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="Niz-AI-uX2">
+            <objects>
+                <controller id="eXb-UN-Cd0" customClass="NotificationController" customModule="AppleWatchExample_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="345"/>
+        </scene>
+    </scenes>
+</document>
