@@ -52,27 +52,16 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       notificationPayloadFile = "AppleWatchExample WatchKit Extension/PushNotificationPayload.apns">
-      <RemoteRunnable
-         runnableDebuggingMode = "2"
-         BundleIdentifier = "com.apple.Carousel"
-         RemotePath = "/AppleWatchExample WatchKit App">
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FA20A9E621579B15006589F8"
-            BuildableName = "AppleWatchExample WatchKit App.app"
-            BlueprintName = "AppleWatchExample WatchKit App"
+            BlueprintIdentifier = "FA20A9D421579B14006589F8"
+            BuildableName = "AppleWatchExample.app"
+            BlueprintName = "AppleWatchExample"
             ReferencedContainer = "container:AppleWatchExample.xcodeproj">
          </BuildableReference>
-      </RemoteRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FA20A9E621579B15006589F8"
-            BuildableName = "AppleWatchExample WatchKit App.app"
-            BlueprintName = "AppleWatchExample WatchKit App"
-            ReferencedContainer = "container:AppleWatchExample.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

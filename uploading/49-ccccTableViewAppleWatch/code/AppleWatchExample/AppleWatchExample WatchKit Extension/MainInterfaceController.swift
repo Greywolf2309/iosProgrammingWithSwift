@@ -9,6 +9,7 @@
 
 import WatchKit
 import Foundation
+import WatchConnectivity
 
 enum MusicState {
     case playing
@@ -16,6 +17,7 @@ enum MusicState {
 }
 class MainInterfaceController: WKInterfaceController {
     @IBOutlet weak var table: WKInterfaceTable!
+    var watchSession: WCSession?
     var tasks:[Task] = [
         Task(taskName: "Drink coffee",
              finishedTime: "07:30",
@@ -61,6 +63,10 @@ class MainInterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         // Configure interface objects here.
         configureTableWithData()
+        watchSession = WCSession.default
+        watchSession?.delegate = self // We don't really need this, we'll just use it for debug.
+        watchSession?.activate()
+        
     }
     
     override func willActivate() {
@@ -75,3 +81,19 @@ class MainInterfaceController: WKInterfaceController {
     
 }
 
+extension MainInterfaceController: WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        print("Session activation did complete")
+    }
+    
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        print("watch received app context: ", applicationContext)
+        let newTask = Task(taskName: applicationContext["taskName"] as! String,
+             finishedTime: applicationContext["finishedTime"] as! String,
+             iconName: "work",
+             color: UIColor.cyan)
+        tasks.append(newTask)
+        configureTableWithData()
+        
+    }
+}

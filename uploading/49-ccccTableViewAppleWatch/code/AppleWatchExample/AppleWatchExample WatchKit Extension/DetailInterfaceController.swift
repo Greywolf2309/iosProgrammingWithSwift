@@ -16,7 +16,12 @@ class DetailInterfaceController: WKInterfaceController {
     var mainController: MainInterfaceController?
     @IBAction func buttonDelele(sender: Any) {
         let okAction = WKAlertAction(title: "Delete", style: .destructive) {
-            self.mainController?.tasks.remove(at: self.mainController?.selectedRow ?? -1)
+            let selectedRow = self.mainController?.selectedRow ?? -1
+            self.mainController?.tasks.remove(at: selectedRow)
+            self.mainController?.table.removeRows(at: IndexSet(integer: selectedRow))
+            DispatchQueue.main.async {
+                self.dismiss()
+            }
         }
         let cancelAction = WKAlertAction(title: "Cancel", style: .default) {
             
@@ -30,6 +35,13 @@ class DetailInterfaceController: WKInterfaceController {
         super.awake(withContext: context)
         // Configure interface objects here.
         mainController = context as? MainInterfaceController
+        let selectedTask = mainController?.tasks[mainController?.selectedRow ?? -1]
+        labelTaskName.setText(selectedTask?.taskName)
+        labelFinishedTime.setText(selectedTask?.finishedTime)
+        imageViewTask.setTintColor(selectedTask?.color)
+        imageViewTask.setImageNamed(selectedTask?.iconName)
+        labelTaskName.setTextColor(selectedTask?.color)
+        labelFinishedTime.setTextColor(selectedTask?.color)
         
     }
     
